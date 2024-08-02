@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<center>
+    <h2>ARE YOU SURE ?</h2>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-success">YES</button>
+        <a href="{% url 'show_url' %}"><button class="btn btn-warning" type="button">NO</button></a>
+    </form>
+</center>
+{% endblock %}

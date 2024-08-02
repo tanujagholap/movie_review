@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+    <h2>ADD MOVIE REVIEW</h2>
+    <form class="m-75" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit">
+    </form>
+</center>
+{% endblock %}

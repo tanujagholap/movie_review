@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>TITLE</th>
+            <th>DIRECTOR</th>
+            <th>CONTENT</th>
+            <th>RATING</th>
+            <th>CREATED_AT</th>
+            <th>EMAIL ID</th>
+            <th>STATUS</th>
+            <th>GENRES</th>
+            <th colspan="2">ACTION</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in form %}
+        <tr>
+            <td>{{ i.r_id }}</td>
+            <td>{{ i.title }}</td>
+            <td>{{ i.director }}</td>
+            <td>{{ i.content }}</td>
+            <td>{{ i.rating }}</td>
+            <td>{{ i.created_at }}</td>
+            <td>{{ i.email }}</td>
+            <td>{{ i.status }}</td>
+            <td>{{ i.genres }}</td>
+            <td><a href="{% url 'update_url' i.id %}"><button class="btn btn-secondary" type="button">UPDATE</button></a></td>
+            <td><a href="{% url 'delete_url' i.id %}"><button class="btn btn-danger" type="button">DELETE</button></a></td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</center>
+{% endblock %}
