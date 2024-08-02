@@ -18,7 +18,7 @@ def show_view(request):
 
 
 def update_view(request, pk):
-    obj = Review.objects.get(id=pk)
+    obj = Review.objects.get(r_id=pk)
     form = ReviewForm(instance=obj)
     if request.method == 'POST':
         form = ReviewForm(request.POST, instance=obj)
@@ -29,7 +29,7 @@ def update_view(request, pk):
 
 
 def delete_view(request, pk):
-    obj = Review.objects.get(id=pk)
+    obj = Review.objects.get(r_id=pk)
     if request.method == 'POST':
         obj.delete()
         return redirect('show_url')

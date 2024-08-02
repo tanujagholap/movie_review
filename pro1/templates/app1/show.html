@@ -29,8 +29,8 @@
             <td>{{ i.email }}</td>
             <td>{{ i.status }}</td>
             <td>{{ i.genres }}</td>
-            <td><a href="{% url 'update_url' i.id %}"><button class="btn btn-secondary" type="button">UPDATE</button></a></td>
-            <td><a href="{% url 'delete_url' i.id %}"><button class="btn btn-danger" type="button">DELETE</button></a></td>
+            <td><a href="{% url 'update_url' i.r_id %}"><button class="btn btn-secondary" type="button">UPDATE</button></a></td>
+            <td><a href="{% url 'delete_url' i.r_id %}"><button class="btn btn-danger" type="button">DELETE</button></a></td>
 
         </tr>
         {% endfor %}
